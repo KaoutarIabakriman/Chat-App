@@ -1,4 +1,5 @@
 package Client;
+import Server.ServerChat;
 
 import java.io.*;
 import java.net.Socket;
@@ -6,8 +7,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.Base64;
+
 
 /**
  * ClientHandler class handles communication between the server and a connected client.
@@ -31,10 +31,27 @@ public class ClientHandler extends Thread {
      * @param diss Data input stream to receive data
      * @param doss Data output stream to send data
      */
-    public ClientHandler(Socket s, DataInputStream diss, DataOutputStream doss) {
+    public ClientHandler(Socket s, DataInputStream diss, DataOutputStream doss){
         this.commthread = s;
         this.dis = diss;
         this.dos = doss;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            this.conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/SwiftChat","root","");
+            this.stmt = this.conn.createStatement();
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            System.out.println("Erreur base de donnee");
+            // error();
+        }
+
+        if(this.conn != null && this.stmt != null){
+          System.out.println("hahah");
+        }
+        else{
+            //  error();
+        }
     }
 
     /**
@@ -44,19 +61,41 @@ public class ClientHandler extends Thread {
     @Override
     public void run() {
         try {
-            System.out.println("Connexion du client numéro IP: " + commthread.getInetAddress());
-            this.dos.writeUTF("Welcome to the chat server!");
+            int i=0;
+            boolean auth=false;
+            while(i<=2){
+                this.dos.writeUTF("entrer votre mail\n : ");
+                String email=this.dis.readLine();
+                for (String e :ServerChat.clientHandlersList){
+                    if (e.equals(email)){
+                        System.out.println("Connexion du client numéro IP: " + commthread.getInetAddress());
+                        this.dos.writeUTF("Welcome to the chat server! Your number is : " + ServerChat.numClient);
+                        auth= true;
+                        break;
+                    }
+                }
+                if (auth){
+                    break;
+                }
+                i++;
+            }
+
+            if (!auth){
+                this.dos.writeUTF("noAuth");
+            }else{
+                while(true){
+                    this.dis.readLine();
+                    this.dos.writeUTF("hiii");
+                }
+            }
+
+
+
+
+
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            // Close resources to prevent memory leaks
-            try {
-                dis.close();
-                dos.close();
-                commthread.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+
         }
     }
 }
