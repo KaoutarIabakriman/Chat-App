@@ -6,17 +6,23 @@
   <component name="ChangeListManager">
     <list default="true" id="c9dfbb28-d4df-478b-8b91-e441a54d3b5b" name="Changes" comment="server start up">
       <change afterPath="$PROJECT_DIR$/src/Client/ClientHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Client/UserAccount.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/Server" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Server" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ChatAppTest/Client/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ChatAppTest/Client/ClientHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Server/ServerChat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Server/ServerChat.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="PUSH_TAGS">
@@ -30,7 +36,7 @@
         <entry key="$PROJECT_DIR$" value="cdf140955b52b2bf7da0f928bbf985880302f9d1" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/src/Server" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -57,7 +63,7 @@
     "Application.ServerChat.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/Kaoutar Iabakriman/Downloads/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0/mysql-connector-j-9.2.0.jar",
     "onboarding.tips.debug.path": "C:/Users/Kaoutar Iabakriman/IdeaProjects/TP_Java/ChatAppTest/src/Main.java",
@@ -161,8 +167,8 @@
           <option name="timeStamp" value="3" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Client/ClientHandler.java</url>
-          <line>62</line>
+          <url>file://$PROJECT_DIR$/src/Server/ServerChat.java</url>
+          <line>51</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
